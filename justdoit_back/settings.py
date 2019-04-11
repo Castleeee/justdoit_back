@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     "xadmin",
     "crispy_forms",
     'corsheaders',
+    "users",
+    "todolist",
 ]
 
 MIDDLEWARE = [
