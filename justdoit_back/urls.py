@@ -15,8 +15,9 @@ Including another URLconf
 """
 
 import xadmin
-from django.urls import path
+from django.urls import path,include
 
 urlpatterns = [
     path('admin/', xadmin.site.urls),
+    path(r'accounts/', include('users.urls')),
 ]
