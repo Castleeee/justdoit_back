@@ -6,8 +6,8 @@ class ItemInfo(models.Model):
     ItemId=models.IntegerField()
     Repeat=models.IntegerField()
     DateCreated=models.DateTimeField()
-    IsDeleted=models.BooleanField()
-    IsDone=models.BooleanField()
+    IsDeleted=models.BooleanField(default=False)
+    IsDone=models.BooleanField(default=False)
     class Meta:
         verbose_name = 'todo item'
 
@@ -17,8 +17,8 @@ class ItemInfo(models.Model):
 class ItemContent(models.Model):
     ItemId=models.ForeignKey(ItemInfo,on_delete=models.CASCADE)
     ContentId = models.IntegerField()
-    Content=models.CharField()
-    Title=models.CharField()
+    Content=models.TextField()
+    Title=models.CharField(max_length=256,default="")
     DateCreated=models.DateTimeField()
     TagId=models.IntegerField()
     class Meta:
