@@ -1,7 +1,7 @@
 #-*-coding:utf-8-*-
 from django.urls import path
-from . import views
-
+#from .views import
+from rest_framework.authtoken import views
 app_name = 'users'
 urlpatterns = [
 
