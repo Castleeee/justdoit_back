@@ -3,8 +3,10 @@ from datetime import datetime
 
 from django.db import models
 from users.models import UserProfile
+
+
 class ItemInfo(models.Model):
-    UserId=models.ForeignKey(UserProfile,on_delete=models.CASCADE,null=True,blank=True,verbose_name="所属用户ID")
+    #UserId=models.ForeignKey(UserProfile,on_delete=models.CASCADE,null=True,blank=True,verbose_name="所属用户ID")
     ItemId=models.IntegerField(primary_key=True,verbose_name="事项ID")
     Repeat=models.IntegerField(verbose_name="重复天数")
     DateCreated=models.DateTimeField(default=datetime.now,verbose_name="创建时间")

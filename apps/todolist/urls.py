@@ -1,11 +1,11 @@
 #-*-coding:utf-8-*-
 from django.urls import path
-from .views import ItemInfoListView
+from .views import ItemInfoListView,ItemContentListView
 
 app_name = 'iteminfo'
 urlpatterns = [
-    path("iteminfo/",ItemInfoListView.as_view())
-
+    path("iteminfo/",ItemInfoListView.as_view()),
+    path("itemcontent/",ItemContentListView.as_view())
 ]
 
 # path(r'iteminfo/<int:itemid>/', views.getiteminfo, name='iteminfo'),  # 获得item所有内容
