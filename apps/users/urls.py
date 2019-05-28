@@ -7,7 +7,8 @@ from rest_framework_jwt.views import obtain_jwt_token,refresh_jwt_token
 app_name = 'users'
 urlpatterns = [
     path(r'login/', obtain_jwt_token),  # jwt的token验证
-    path(r'tokenRefresh/', refresh_jwt_token),  # token刷新   
+    path(r'tokenRefresh/', refresh_jwt_token),  # token刷新
+    #path(r"user/",),
     #path(r"")
 ]
 # path(r'register/', views.register, name='register'),#注册
