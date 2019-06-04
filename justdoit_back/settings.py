@@ -31,6 +31,17 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = "users.UserProfile"
 
+AUTHENTICATION_BACKENDS = (
+    'users.views.CustomBackend',
+
+)
+import datetime
+#有效期限
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=7),    #也可以设置seconds=20
+    'JWT_AUTH_HEADER_PREFIX': 'JWT',                       #JWT跟前端保持一致，比如“token”这里设置成JWT
+}
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.BasicAuthentication',
